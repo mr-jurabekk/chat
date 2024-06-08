@@ -1,0 +1,113 @@
+.body {
+  padding: 0;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+.chat {
+  padding-top: 20px;
+  height: calc(100vh - 40px);
+}
+.chat .container {
+  padding: 0;
+  margin: 0 auto;
+}
+.chat .container .chat_inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  gap: 15px 0;
+  width: 800px;
+  height: 600px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 8px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/assets/img/bg.jpeg");
+  background-size: cover;
+  overflow-y: scroll;
+}
+.chat .container .chat_inner .user_header {
+  padding: 20px;
+}
+.chat .container .chat_inner .user_header .user {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 0 10px;
+  height: -moz-fit-content;
+  height: fit-content;
+  z-index: 1;
+}
+.chat .container .chat_inner .user_header .user .user_img img {
+  width: 35px;
+}
+.chat .container .chat_inner .user_header .user .user_text {
+  padding: 8px;
+  font-size: 18px;
+  border-radius: 10px;
+  background-color: #1E1E1E;
+  color: #FAFAFA;
+  font-family: monospace;
+  width: 75%;
+}
+.chat .container .chat_inner .user_header .user .user_text .name {
+  font-weight: bold;
+  color: red;
+  font-style: italic;
+  padding-left: 20px;
+}
+.chat .container .chat_inner .user_header .user::after {
+  content: "";
+  position: absolute;
+  background-color: #1E1E1E;
+  height: 30px;
+  width: 40px;
+  top: 5px;
+  left: 40px;
+  z-index: -1;
+  rotate: 75deg;
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.chat .container .chat_inner .user_header .user.typing {
+  flex-direction: row-reverse;
+}
+.chat .container .chat_inner .user_header .user.typing .user_text {
+  background-color: #1d4e71;
+}
+.chat .container .chat_inner .user_header .user.typing::after {
+  content: "";
+  position: absolute;
+  background-color: #1d4e71;
+  height: 30px;
+  width: 40px;
+  top: 8px;
+  left: calc(100% - 75px);
+  z-index: -1;
+  rotate: 165deg;
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.chat .container .chat_inner .message {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 20px 10px;
+  width: calc(100% - 20px);
+  background-color: #1E1E1E;
+  z-index: 10;
+}
+.chat .container .chat_inner .message form .text {
+  width: 80%;
+  border-radius: 10px;
+  height: 30px;
+  outline: none;
+  padding-left: 15px;
+}
+.chat .container .chat_inner .message form .submit {
+  padding: 9px;
+  width: 15%;
+  border-radius: 7px;
+}/*# sourceMappingURL=main.css.map */

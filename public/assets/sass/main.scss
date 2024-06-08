@@ -1,0 +1,143 @@
+.body {
+  padding: 0;
+}
+
+.chat {
+  padding-top: 20px;
+
+  height: 100vh;
+
+  .container {
+    padding: 0;
+    margin: 0 auto;
+
+    .chat_inner {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      gap: 15px 0;
+      width: 800px;
+      height: 600px;
+      border: 1px solid #0000;
+      border-radius: 8px;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('/assets/img/bg.jpeg');
+      // background-image: url('/assets/img/bg.jpeg');
+      background-size: cover;
+
+      overflow-y: scroll;
+
+      .user_header {
+
+        padding: 20px;
+
+        .user {
+          position: relative;
+          display: flex;
+          align-items: baseline;
+          gap: 0 10px;
+          height: fit-content;
+          z-index: 1;
+
+
+          .user_img {
+
+            img {
+              width: 35px;
+
+            }
+          }
+
+          .user_text {
+            padding: 8px;
+            font-size: 18px;
+            border-radius: 10px;
+            background-color: #1E1E1E;
+            color: #FAFAFA;
+            font-family: monospace;
+            width: 75%;
+
+            .name {
+              font-weight: bold;
+              color: red;
+              font-style: italic;
+              padding-left: 20px;
+            }
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            background-color: #1E1E1E;
+            height: 30px;
+            width: 40px;
+            top: 5px;
+            left: 40px;
+            z-index: -1;
+            rotate: 75deg;
+
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          }
+
+          &.typing {
+            flex-direction: row-reverse;
+
+            .user_text {
+              background-color: #1d4e71;
+            }
+
+            &::after {
+              content: '';
+              position: absolute;
+              background-color: #1d4e71;
+              height: 30px;
+              width: 40px;
+              top: 8px;
+              left: calc(100% - 75px);
+              z-index: -1;
+              rotate: 165deg;
+
+              clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            }
+          }
+
+
+        }
+
+      }
+
+
+
+      .message {
+        position: sticky;
+        left: 0;
+        bottom: 0;
+        padding: 20px 10px;
+        width: calc(100% - 20px);
+        background-color: #1E1E1E;
+        z-index: 10;
+
+
+        form {
+          .text {
+            width: 80%;
+            border-radius: 10px;
+            height: 30px;
+            outline: none;
+            padding-left: 15px;
+          }
+
+          .submit {
+            padding: 9px;
+            width: 15%;
+            border-radius: 7px;
+          }
+        }
+
+      }
+
+
+    }
+  }
+}
